@@ -1,122 +1,712 @@
-# App Store Connect 情報
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="瞑想の旅 / Meditation Journey support site">
+  <title>瞑想の旅 Support</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --paper: #f4f7fb;
+      --panel: #ffffff;
+      --navy: #1d2c45;
+      --blue: #314568;
+      --accent: #4a7ba7;
+      --shadow: 0 18px 50px rgba(29, 44, 69, 0.16);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+    }
 
-## アプリ名
+    * {
+      box-sizing: border-box;
+    }
 
-- 日本語: 瞑想の旅
-- 英語: Meditation Journey
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(74, 123, 167, 0.22), transparent 34rem),
+        linear-gradient(180deg, #f4f7fb 0%, #eef3f9 50%, #ffffff 100%);
+      color: var(--ink);
+      line-height: 1.7;
+    }
 
-## サブタイトル
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-- 日本語: 世界の音と呼吸瞑想
-- 英語: World sounds & breath meditation
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
 
-## プロモーション用テキスト
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(215, 222, 232, 0.78);
+      background: rgba(244, 247, 251, 0.88);
+      backdrop-filter: blur(18px);
+    }
 
-世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残せるアプリです。大陸や国・地域の音を選んで、世界旅行をしている気分で瞑想の旅へ出かけましょう。
+    .header-inner {
+      width: min(1080px, calc(100% - 32px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
 
-## 説明文
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
 
-このアプリは、世界の音を聴きながら瞑想の旅へ出かけることができます。
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(29, 44, 69, 0.2);
+    }
 
-世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残すことができます。瞑想した日はカレンダーに表示され、地図上にも記録が残ります。
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
 
-### 主な機能
+    .language label {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-- **音声ガイド**: 瞑想が初めての人向けに、瞑想中にどうすればいいか音声で教えてくれます。ON/OFFを切り替えられます。
-- **大陸と国・地域の選択**: 瞑想中に聴きたい大陸や国・地域の音を選択します。6大陸・36の国・地域から選べます。世界旅行をしている気分で瞑想ができます。
-- **カレンダーへの記録**: 瞑想した日は、カレンダーの該当日に背景色が表示されます。瞑想時間によって色が変わります。
-- **地図への記録**: その国・地域の音で60分以上瞑想すると、地図にピンが立つようになります。
-- **音をきく**: タイマーを設定して、世界の音だけを聴くモードも利用できます（記録は残りません）。
+    .language select {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      padding: 0 34px 0 12px;
+    }
 
-### 瞑想のやり方
+    main {
+      overflow: hidden;
+    }
 
-このアプリでは呼吸瞑想を基本としています。
+    .hero {
+      width: min(1080px, calc(100% - 32px));
+      min-height: calc(100svh - 72px);
+      margin: 0 auto;
+      padding: 56px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      align-items: center;
+      gap: 48px;
+    }
 
-1. 姿勢を整える — 背筋を伸ばして座り、リラックスした姿勢を保ちます
-2. 目を閉じる — 静かに目を閉じて、外の刺激から意識を離します
-3. 呼吸に集中 — 自然な呼吸を感じ、息を吸う・吐く感覚に意識を向けます
-4. 雑念を手放す — 他のことを考えても大丈夫。再び呼吸に意識を戻しましょう
+    .hero-copy {
+      max-width: 620px;
+    }
 
-### 注意事項
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
 
-記録を残したい場合は「瞑想」を使用してください。「音をきく」では記録は残りません。
+    .kicker::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
 
-## キーワード
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
 
-瞑想,呼吸瞑想,マインドフルネス,リラックス,睡眠,集中,世界旅行,音,カレンダー,記録
+    .lead {
+      margin: 24px 0 0;
+      color: #334155;
+      font-size: clamp(1.08rem, 2vw, 1.32rem);
+      max-width: 38rem;
+    }
 
-## カテゴリ
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
 
-- プライマリ: ヘルスケア／フィットネス
-- セカンダリ: ライフスタイル
+    .app-store-link {
+      display: inline-flex;
+      align-items: center;
+      width: 180px;
+      line-height: 0;
+    }
 
-## 動作環境
+    .app-store-link img {
+      width: 100%;
+      height: auto;
+    }
 
-- iOS 26.4以降
-- iPhone（縦向きのみ）
-- Apple Musicの楽曲再生には、メディアとApple Musicへのアクセス許可が必要です
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 8px;
+      border: 1px solid var(--navy);
+      padding: 0 18px;
+      background: var(--navy);
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
 
-## 対応言語
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
 
-日本語
+    .phone-stage {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+    }
 
-## バージョン
+    .phone {
+      width: min(330px, 82vw);
+      border: 10px solid #20242c;
+      border-radius: 38px;
+      background: #20242c;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: rotate(2deg);
+    }
 
-1.0
+    .phone img {
+      width: 100%;
+      border-radius: 26px;
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+    }
 
-## サポートURL
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+      padding: 0;
+      list-style: none;
+    }
 
-（本リポジトリの index.html をホスティングしたURL）
+    .badge-row li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 7px 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
 
-## プライバシーポリシーURL
+    section {
+      padding: 72px 0;
+    }
 
-（本リポジトリの index.html#privacy をホスティングしたURL）
+    .section-inner {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-## プライバシーポリシー
+    .section-heading {
+      margin: 0 0 26px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
 
-瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。
+    .section-lead {
+      max-width: 720px;
+      margin: -12px 0 34px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
 
-### 収集・保存する情報
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
 
-アプリは以下の情報を端末内（UserDefaults および Core Data）に保存します。
+    .feature {
+      min-height: 180px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(30, 41, 59, 0.07);
+    }
 
-- 選択した大陸・国・地域の音
-- 瞑想時間・音をきく時間の設定
-- 音声ガイドのON/OFF設定
-- 瞑想記録（日付、瞑想時間、選択した音）
+    .feature strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+    }
 
-これらのデータは端末内にのみ保存され、外部サーバーへ送信されません。
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-### 第三者サービス
+    .screens {
+      background: var(--navy);
+      color: #ffffff;
+    }
 
-- **Apple Music（MusicKit）**: 各国・地域の音楽プレビューを再生するためにApple MusicのAPIを利用します。Apple Musicの利用にはApple IDでのサインインおよびメディアライブラリへのアクセス許可が必要です。Appleのプライバシーポリシーと利用条件が適用されます。
+    .screens .section-lead {
+      color: rgba(255, 255, 255, 0.74);
+    }
 
-### このWebページ
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
 
-このサポートページでは、選択した言語をブラウザ内（localStorage）に保存する場合があります。
+    .screen-shot {
+      margin: 0;
+    }
 
-## サポート（FAQ）
+    .screen-shot img {
+      border: 7px solid rgba(255, 255, 255, 0.14);
+      border-radius: 26px;
+      background: #111827;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+      width: 100%;
+    }
 
-### 音が再生されません
+    .screen-shot figcaption {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 700;
+      text-align: center;
+    }
 
-メディアとApple Musicへのアクセスがオンになっているか確認してください。Apple Musicにサインインしている必要があります。設定アプリから本アプリの権限を確認できます。
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
 
-### 瞑想記録が残りません
+    .support-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(30, 41, 59, 0.07);
+    }
 
-記録を残すには「瞑想」タブを使用してください。「音をきく」タブでは記録は保存されません。
+    .support-box h3 {
+      margin: 0 0 12px;
+      font-size: 1.32rem;
+    }
 
-### 地図にピンが表示されません
+    .support-box p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-同じ国・地域の音で合計60分以上瞑想すると、地図にピンが表示されます。「瞑想」タブでの記録のみが対象です。
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
 
-### 音声ガイドを変更できますか
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 18px 20px;
+    }
 
-「瞑想」画面の音声ガイドボタンでON/OFFを切り替えられます。
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
 
-### 瞑想時間は選べますか
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
 
-1分、3分、5分、10分、20分、30分、40分、50分、60分から選択できます。
+    .privacy {
+      background: #eef3f9;
+    }
 
-## お問い合わせ
+    .site-footer {
+      padding: 26px 16px 42px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.76);
+      text-align: center;
+      font-size: 0.92rem;
+    }
 
-不具合報告の際は、端末名、iOSバージョン、発生した画面、再現手順を添えてください。
+    @media (max-width: 860px) {
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+      }
+
+      .phone-stage {
+        min-height: auto;
+      }
+
+      .features,
+      .screen-grid,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screen-grid {
+        width: min(330px, 100%);
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .header-inner {
+        width: calc(100% - 20px);
+        min-height: 64px;
+      }
+
+      .brand span {
+        max-width: 42vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .language label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+
+      .language select {
+        max-width: 128px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .hero {
+        width: calc(100% - 24px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="image/app-icon.png" alt="">
+        <span data-i18n="appName">瞑想の旅</span>
+      </div>
+      <div class="language">
+        <label for="language-select" data-i18n="languageLabel">Language</label>
+        <select id="language-select" aria-label="Language">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="kicker" data-i18n="kicker">iOS meditation app</p>
+        <h1 data-i18n="heroTitle">瞑想の旅</h1>
+        <p class="lead" data-i18n="heroLead">世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残すアプリです。大陸や国・地域の音を選んで、世界旅行をしている気分で瞑想の旅へ出かけましょう。</p>
+        <div class="hero-actions">
+          <a class="button" href="#support" data-i18n="supportButton">サポートを見る</a>
+          <a class="button secondary" href="#privacy" data-i18n="privacyButton">プライバシー</a>
+        </div>
+        <ul class="badge-row" aria-label="Features">
+          <li data-i18n="badge1">6大陸・36の国・地域</li>
+          <li data-i18n="badge2">音声ガイド</li>
+          <li data-i18n="badge3">カレンダー・地図記録</li>
+        </ul>
+      </div>
+      <div class="phone-stage" aria-hidden="true">
+        <div class="phone">
+          <img src="image/screen-meditation-jp.jpg" alt="" data-screenshot="screen-meditation">
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="section-inner">
+        <h2 class="section-heading" data-i18n="featuresTitle">主な機能</h2>
+        <p class="section-lead" data-i18n="featuresLead">世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残すことができます。瞑想した日はカレンダーに表示され、地図上にも記録が残ります。</p>
+        <div class="features">
+          <div class="feature">
+            <strong data-i18n="feature1Title">音声ガイド</strong>
+            <p data-i18n="feature1Text">瞑想が初めての人向けに、瞑想中にどうすればいいか音声で教えてくれます。ON/OFFを切り替えられます。</p>
+          </div>
+          <div class="feature">
+            <strong data-i18n="feature2Title">大陸と国・地域の選択</strong>
+            <p data-i18n="feature2Text">瞑想中に聴きたい大陸や国・地域の音を選択します。6大陸・36の国・地域から選べます。</p>
+          </div>
+          <div class="feature">
+            <strong data-i18n="feature3Title">カレンダー・地図への記録</strong>
+            <p data-i18n="feature3Text">瞑想した日はカレンダーに色付きで表示されます。60分以上瞑想すると地図にピンが立ちます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screens" id="screens">
+      <div class="section-inner">
+        <h2 class="section-heading" data-i18n="screensTitle">Screenshots</h2>
+        <p class="section-lead" data-i18n="screensLead">瞑想の設定、大陸・国・地域の選択、瞑想中の画面など、アプリの流れをご覧いただけます。</p>
+        <div class="screen-grid">
+          <figure class="screen-shot">
+            <img src="image/screen-meditation-jp.jpg" alt="Meditation setup screen" data-screenshot="screen-meditation">
+            <figcaption data-i18n="screen1">瞑想の設定</figcaption>
+          </figure>
+          <figure class="screen-shot">
+            <img src="image/screen-continent-jp.jpg" alt="Continent selection screen" data-screenshot="screen-continent">
+            <figcaption data-i18n="screen2">大陸・国・地域の選択</figcaption>
+          </figure>
+          <figure class="screen-shot">
+            <img src="image/screen-playing-jp.jpg" alt="Meditating screen" data-screenshot="screen-playing">
+            <figcaption data-i18n="screen3">瞑想中</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="section-inner">
+        <h2 class="section-heading" data-i18n="supportTitle">Support</h2>
+        <p class="section-lead" data-i18n="supportLead">困ったときは、まず下記の項目をご確認ください。</p>
+        <div class="support-grid">
+          <div class="support-box">
+            <h3 data-i18n="requirementsTitle">動作環境</h3>
+            <p data-i18n="requirementsText">iOS 26.4以降に対応しています。Apple Musicの楽曲再生には、メディアとApple Musicへのアクセス許可およびApple IDでのサインインが必要です。</p>
+          </div>
+          <div class="support-box">
+            <h3 data-i18n="noteTitle">注意事項</h3>
+            <p data-i18n="noteText">記録を残したい場合は「瞑想」を使用してください。「音をきく」では記録は残りません。</p>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary data-i18n="faq1Q">音が再生されません。</summary>
+            <p data-i18n="faq1A">メディアとApple Musicへのアクセスがオンになっているか確認してください。Apple Musicにサインインしている必要があります。設定アプリから本アプリの権限を確認できます。</p>
+          </details>
+          <details>
+            <summary data-i18n="faq2Q">瞑想記録が残りません。</summary>
+            <p data-i18n="faq2A">記録を残すには「瞑想」タブを使用してください。「音をきく」タブでは記録は保存されません。</p>
+          </details>
+          <details>
+            <summary data-i18n="faq3Q">地図にピンが表示されません。</summary>
+            <p data-i18n="faq3A">同じ国・地域の音で合計60分以上瞑想すると、地図にピンが表示されます。「瞑想」タブでの記録のみが対象です。</p>
+          </details>
+          <details>
+            <summary data-i18n="faq4Q">音声ガイドや瞑想時間を変更できますか。</summary>
+            <p data-i18n="faq4A">「瞑想」画面の音声ガイドボタンでON/OFFを切り替えられます。瞑想時間は1分、3分、5分、10分、20分、30分、40分、50分、60分から選択できます。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy" id="privacy">
+      <div class="section-inner">
+        <h2 class="section-heading" data-i18n="privacyTitle">Privacy Policy</h2>
+        <p class="section-lead" data-i18n="privacyLead">瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。Apple Musicの楽曲再生ではAppleのサービスにより必要な情報が処理される場合があります。</p>
+        <div class="support-grid">
+          <div class="support-box">
+            <h3 data-i18n="privacy1Title">収集・保存する情報</h3>
+            <p data-i18n="privacy1Text">アプリは選択した音、瞑想時間の設定、音声ガイドのON/OFF、瞑想記録（日付、瞑想時間、選択した音）を端末内（UserDefaultsおよびCore Data）に保存します。これらのデータは端末内にのみ保存され、外部サーバーへ送信されません。このWebページでは、選択した言語をブラウザ内に保存します。</p>
+          </div>
+          <div class="support-box">
+            <h3 data-i18n="privacy2Title">第三者サービス</h3>
+            <p data-i18n="privacy2Text">各国・地域の音楽プレビューを再生するためにApple Music（MusicKit）のAPIを利用します。Apple Musicの利用にはApple IDでのサインインおよびメディアライブラリへのアクセス許可が必要です。Appleのプライバシーポリシーと利用条件が適用されます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-inner">
+        <h2 class="section-heading" data-i18n="contactTitle">お問い合わせ</h2>
+        <p class="section-lead" data-i18n="contactText">不具合報告の際は、端末名、iOSバージョン、発生した画面、再現手順を添えてください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="footer">© Meditation Journey. All rights reserved.</span>
+  </footer>
+
+  <script>
+    const base = {
+      appName: "Meditation Journey",
+      kicker: "iOS meditation app",
+      heroTitle: "Meditation Journey",
+      heroLead: "Meditate with breath awareness while listening to sounds from around the world, and keep a daily record of your practice. Choose a continent, country, or region and embark on a meditation journey as if traveling the globe.",
+      languageLabel: "Language",
+      supportButton: "View Support",
+      privacyButton: "Privacy",
+      badge1: "6 continents · 36 regions",
+      badge2: "Audio guide",
+      badge3: "Calendar & map records",
+      featuresTitle: "Key Features",
+      featuresLead: "Meditate with breath awareness while listening to world sounds and keep a daily record. Completed days appear on the calendar and map.",
+      feature1Title: "Audio Guide",
+      feature1Text: "Voice guidance for beginners on what to do during meditation. Can be toggled ON/OFF.",
+      feature2Title: "Continent & Region Selection",
+      feature2Text: "Choose sounds from continents, countries, and regions. Select from 6 continents and 36 regions.",
+      feature3Title: "Calendar & Map Records",
+      feature3Text: "Meditation days are highlighted on the calendar. Pins appear on the map after 60+ minutes in the same region.",
+      screensTitle: "Screenshots",
+      screensLead: "See the app flow from meditation setup to continent selection and the meditating screen.",
+      screen1: "Meditation setup",
+      screen2: "Continent & region",
+      screen3: "Meditating",
+      supportTitle: "Support",
+      supportLead: "If you need help, please check the items below first.",
+      requirementsTitle: "Requirements",
+      requirementsText: "Requires iOS 26.4 or later. Apple Music preview playback requires Media & Apple Music access permission and sign-in with an Apple ID.",
+      noteTitle: "Important",
+      noteText: "Use the \"Meditate\" tab to save records. The \"Listen\" tab does not save records.",
+      faq1Q: "Sound does not play.",
+      faq1A: "Please confirm that Media & Apple Music access is enabled and that you are signed in to Apple Music. You can check app permissions in the Settings app.",
+      faq2Q: "Meditation records are not saved.",
+      faq2A: "Use the \"Meditate\" tab to save records. The \"Listen\" tab does not save records.",
+      faq3Q: "Pins do not appear on the map.",
+      faq3A: "Pins appear after a total of 60+ minutes of meditation with the same region's sound. Only records from the \"Meditate\" tab count.",
+      faq4Q: "Can I change the audio guide or meditation duration?",
+      faq4A: "Toggle the audio guide ON/OFF on the \"Meditate\" screen. Choose from 1, 3, 5, 10, 20, 30, 40, 50, or 60 minutes.",
+      privacyTitle: "Privacy Policy",
+      privacyLead: "Meditation Journey does not send personally identifiable information to a developer-operated server. Apple Music playback may involve processing by Apple services.",
+      privacy1Title: "Information Stored",
+      privacy1Text: "The app stores selected sounds, meditation duration settings, audio guide ON/OFF, and meditation records (date, duration, selected sound) on your device (UserDefaults and Core Data). This data is stored locally only and is not sent to external servers. This web page stores your selected language in your browser.",
+      privacy2Title: "Third-party Services",
+      privacy2Text: "The app uses the Apple Music (MusicKit) API to play music previews from each country and region. Apple Music requires sign-in with an Apple ID and Media Library access permission. Apple's privacy policy and terms apply.",
+      contactTitle: "Contact",
+      contactText: "When reporting a bug, please include your device name, iOS version, the screen where the issue occurred, and steps to reproduce.",
+      footer: "© Meditation Journey. All rights reserved."
+    };
+
+    const translations = {
+      ja: {
+        appName: "瞑想の旅",
+        kicker: "iOS瞑想アプリ",
+        heroTitle: "瞑想の旅",
+        heroLead: "世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残すアプリです。大陸や国・地域の音を選んで、世界旅行をしている気分で瞑想の旅へ出かけましょう。",
+        supportButton: "サポートを見る",
+        privacyButton: "プライバシー",
+        badge1: "6大陸・36の国・地域",
+        badge2: "音声ガイド",
+        badge3: "カレンダー・地図記録",
+        featuresTitle: "主な機能",
+        featuresLead: "世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残すことができます。瞑想した日はカレンダーに表示され、地図上にも記録が残ります。",
+        feature1Title: "音声ガイド",
+        feature1Text: "瞑想が初めての人向けに、瞑想中にどうすればいいか音声で教えてくれます。ON/OFFを切り替えられます。",
+        feature2Title: "大陸と国・地域の選択",
+        feature2Text: "瞑想中に聴きたい大陸や国・地域の音を選択します。6大陸・36の国・地域から選べます。",
+        feature3Title: "カレンダー・地図への記録",
+        feature3Text: "瞑想した日はカレンダーに色付きで表示されます。60分以上瞑想すると地図にピンが立ちます。",
+        screensLead: "瞑想の設定、大陸・国・地域の選択、瞑想中の画面など、アプリの流れをご覧いただけます。",
+        screen1: "瞑想の設定",
+        screen2: "大陸・国・地域の選択",
+        screen3: "瞑想中",
+        supportLead: "困ったときは、まず下記の項目をご確認ください。",
+        requirementsTitle: "動作環境",
+        requirementsText: "iOS 26.4以降に対応しています。Apple Musicの楽曲再生には、メディアとApple Musicへのアクセス許可およびApple IDでのサインインが必要です。",
+        noteTitle: "注意事項",
+        noteText: "記録を残したい場合は「瞑想」を使用してください。「音をきく」では記録は残りません。",
+        faq1Q: "音が再生されません。",
+        faq1A: "メディアとApple Musicへのアクセスがオンになっているか確認してください。Apple Musicにサインインしている必要があります。設定アプリから本アプリの権限を確認できます。",
+        faq2Q: "瞑想記録が残りません。",
+        faq2A: "記録を残すには「瞑想」タブを使用してください。「音をきく」タブでは記録は保存されません。",
+        faq3Q: "地図にピンが表示されません。",
+        faq3A: "同じ国・地域の音で合計60分以上瞑想すると、地図にピンが表示されます。「瞑想」タブでの記録のみが対象です。",
+        faq4Q: "音声ガイドや瞑想時間を変更できますか。",
+        faq4A: "「瞑想」画面の音声ガイドボタンでON/OFFを切り替えられます。瞑想時間は1分、3分、5分、10分、20分、30分、40分、50分、60分から選択できます。",
+        privacyTitle: "プライバシーポリシー",
+        privacyLead: "瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。Apple Musicの楽曲再生ではAppleのサービスにより必要な情報が処理される場合があります。",
+        privacy1Title: "収集・保存する情報",
+        privacy1Text: "アプリは選択した音、瞑想時間の設定、音声ガイドのON/OFF、瞑想記録（日付、瞑想時間、選択した音）を端末内（UserDefaultsおよびCore Data）に保存します。これらのデータは端末内にのみ保存され、外部サーバーへ送信されません。このWebページでは、選択した言語をブラウザ内に保存します。",
+        privacy2Title: "第三者サービス",
+        privacy2Text: "各国・地域の音楽プレビューを再生するためにApple Music（MusicKit）のAPIを利用します。Apple Musicの利用にはApple IDでのサインインおよびメディアライブラリへのアクセス許可が必要です。Appleのプライバシーポリシーと利用条件が適用されます。",
+        contactTitle: "お問い合わせ",
+        contactText: "不具合報告の際は、端末名、iOSバージョン、発生した画面、再現手順を添えてください。",
+        footer: "© 瞑想の旅. All rights reserved."
+      }
+    };
+
+    const select = document.querySelector("#language-select");
+    const nodes = document.querySelectorAll("[data-i18n]");
+
+    function pickLanguage() {
+      const stored = localStorage.getItem("meditationJourneyLanguage");
+      if (stored && (stored === "ja" || stored === "en")) return stored;
+      const browser = navigator.language || "ja";
+      return browser.startsWith("ja") ? "ja" : "en";
+    }
+
+    function applyLanguage(lang) {
+      const dictionary = { ...base, ...(translations[lang] || {}) };
+      document.documentElement.lang = lang;
+      document.title = `${dictionary.appName} Support`;
+      nodes.forEach((node) => {
+        const key = node.dataset.i18n;
+        if (dictionary[key]) node.textContent = dictionary[key];
+      });
+      select.value = lang;
+      localStorage.setItem("meditationJourneyLanguage", lang);
+    }
+
+    select.addEventListener("change", (event) => applyLanguage(event.target.value));
+    applyLanguage(pickLanguage());
+  </script>
+</body>
+</html>
