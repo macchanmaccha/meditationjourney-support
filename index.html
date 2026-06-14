@@ -373,6 +373,10 @@
       background: #eef3f9;
     }
 
+    .actions {
+      margin-top: 8px;
+    }
+
     .site-footer {
       padding: 26px 16px 42px;
       background: var(--navy);
@@ -464,7 +468,7 @@
         <p class="lead" data-i18n="heroLead">世界の音を聴きながら呼吸瞑想を行い、日々の瞑想記録を残すアプリです。大陸や国・地域の音を選んで、世界旅行をしている気分で瞑想の旅へ出かけましょう。</p>
         <div class="hero-actions">
           <a class="button" href="#support" data-i18n="supportButton">サポートを見る</a>
-          <a class="button secondary" href="#privacy" data-i18n="privacyButton">プライバシー</a>
+          <a class="button secondary" href="https://macchanmaccha.github.io/meditationjourney-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="privacyButton">プライバシー</a>
         </div>
         <ul class="badge-row" aria-label="Features">
           <li data-i18n="badge1">6大陸・36の国・地域</li>
@@ -558,17 +562,10 @@
 
     <section class="privacy" id="privacy">
       <div class="section-inner">
-        <h2 class="section-heading" data-i18n="privacyTitle">Privacy Policy</h2>
-        <p class="section-lead" data-i18n="privacyLead">瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。Apple Musicの楽曲再生ではAppleのサービスにより必要な情報が処理される場合があります。</p>
-        <div class="support-grid">
-          <div class="support-box">
-            <h3 data-i18n="privacy1Title">収集・保存する情報</h3>
-            <p data-i18n="privacy1Text">アプリは選択した音、瞑想時間の設定、音声ガイドのON/OFF、瞑想記録（日付、瞑想時間、選択した音）を端末内（UserDefaultsおよびCore Data）に保存します。これらのデータは端末内にのみ保存され、外部サーバーへ送信されません。このWebページでは、選択した言語をブラウザ内に保存します。</p>
-          </div>
-          <div class="support-box">
-            <h3 data-i18n="privacy2Title">第三者サービス</h3>
-            <p data-i18n="privacy2Text">各国・地域の音楽プレビューを再生するためにApple Music（MusicKit）のAPIを利用します。Apple Musicの利用にはApple IDでのサインインおよびメディアライブラリへのアクセス許可が必要です。Appleのプライバシーポリシーと利用条件が適用されます。</p>
-          </div>
+        <h2 class="section-heading" data-i18n="privacyTitle">プライバシーポリシー</h2>
+        <p class="section-lead" data-i18n="privacyLead">瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。詳細はプライバシーポリシーページをご確認ください。</p>
+        <div class="actions">
+          <a class="button" href="https://macchanmaccha.github.io/meditationjourney-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="privacyLinkButton">プライバシーポリシーを見る</a>
         </div>
       </div>
     </section>
@@ -578,8 +575,8 @@
         <h2 class="section-heading" data-i18n="contactTitle">お問い合わせ</h2>
         <p class="section-lead" data-i18n="contactText">お問合せは、以下のフォームに連絡ください。</p>
         <div class="actions">
-        <a class="button" href="https://forms.gle/Dtdunv2ef418MsTP9" data-i18n="googleFormButton">Google Form を開く</a>
-      </div>
+          <a class="button" href="https://forms.gle/Dtdunv2ef418MsTP9" target="_blank" rel="noopener noreferrer" data-i18n="googleFormButton">Google Form を開く</a>
+        </div>
       </div>
     </section>
   </main>
@@ -628,13 +625,11 @@
       faq4Q: "Can I change the audio guide or meditation duration?",
       faq4A: "Toggle the audio guide ON/OFF on the \"Meditate\" screen. Choose from 1, 3, 5, 10, 20, 30, 40, 50, or 60 minutes.",
       privacyTitle: "Privacy Policy",
-      privacyLead: "Meditation Journey does not send personally identifiable information to a developer-operated server. Apple Music playback may involve processing by Apple services.",
-      privacy1Title: "Information Stored",
-      privacy1Text: "The app stores selected sounds, meditation duration settings, audio guide ON/OFF, and meditation records (date, duration, selected sound) on your device (UserDefaults and Core Data). This data is stored locally only and is not sent to external servers. This web page stores your selected language in your browser.",
-      privacy2Title: "Third-party Services",
-      privacy2Text: "The app uses the Apple Music (MusicKit) API to play music previews from each country and region. Apple Music requires sign-in with an Apple ID and Media Library access permission. Apple's privacy policy and terms apply.",
+      privacyLead: "Meditation Journey does not send personally identifiable information to a developer-operated server. Please see the privacy policy page for details.",
+      privacyLinkButton: "View Privacy Policy",
       contactTitle: "Contact",
       contactText: "When reporting a bug, please include your device name, iOS version, the screen where the issue occurred, and steps to reproduce.",
+      googleFormButton: "Open Google Form",
       footer: "© Meditation Journey. All rights reserved."
     };
 
@@ -675,13 +670,11 @@
         faq4Q: "音声ガイドや瞑想時間を変更できますか。",
         faq4A: "「瞑想」画面の音声ガイドボタンでON/OFFを切り替えられます。瞑想時間は1分、3分、5分、10分、20分、30分、40分、50分、60分から選択できます。",
         privacyTitle: "プライバシーポリシー",
-        privacyLead: "瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。Apple Musicの楽曲再生ではAppleのサービスにより必要な情報が処理される場合があります。",
-        privacy1Title: "収集・保存する情報",
-        privacy1Text: "アプリは選択した音、瞑想時間の設定、音声ガイドのON/OFF、瞑想記録（日付、瞑想時間、選択した音）を端末内（UserDefaultsおよびCore Data）に保存します。これらのデータは端末内にのみ保存され、外部サーバーへ送信されません。このWebページでは、選択した言語をブラウザ内に保存します。",
-        privacy2Title: "第三者サービス",
-        privacy2Text: "各国・地域の音楽プレビューを再生するためにApple Music（MusicKit）のAPIを利用します。Apple Musicの利用にはApple IDでのサインインおよびメディアライブラリへのアクセス許可が必要です。Appleのプライバシーポリシーと利用条件が適用されます。",
+        privacyLead: "瞑想の旅は、開発者独自のサーバーへ個人を特定できる情報を送信しません。詳細はプライバシーポリシーページをご確認ください。",
+        privacyLinkButton: "プライバシーポリシーを見る",
         contactTitle: "お問い合わせ",
-        contactText: "不具合報告の際は、端末名、iOSバージョン、発生した画面、再現手順を添えてください。",
+        contactText: "お問合せは、以下のフォームに連絡ください。",
+        googleFormButton: "Google Form を開く",
         footer: "© 瞑想の旅. All rights reserved."
       }
     };
